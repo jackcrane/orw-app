@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Styled Text Component should render correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "color": "#333",
+        "fontSize": 20,
+      },
+    ]
+  }
+/>
+`;
