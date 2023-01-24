@@ -1,8 +1,11 @@
+name: Expo Build
+
 on:
   workflow_run:
     workflows: [Test, Lint]
     types: [completed]
     branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
