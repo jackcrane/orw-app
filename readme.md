@@ -16,6 +16,7 @@ This is a template for creating a new React Native project. It comes based on Ex
 - [x] React Navigation
 - [x] Styled Components
 - [x] react-native-toast-message
+- [x] Google Fonts (ships with Inter)
 
 ## Installation
 
