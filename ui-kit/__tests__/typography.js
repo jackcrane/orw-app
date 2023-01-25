@@ -19,6 +19,7 @@ describe("Styled Text Component", () => {
     expect(style[0]).toEqual({
       color: "#333",
       fontSize: 20,
+      fontFamily: "Inter_400Regular",
     });
   });
   it("should not pass styles down", () => {
