@@ -3,7 +3,7 @@ name: Expo Build
 on:
   push:
     branches:
-      - master
+      - build
 
 jobs:
   build:
