@@ -1,30 +1,51 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Toast from "react-native-toast-message";
 import AppLoading from "expo-app-loading";
-import { useFonts, Inter_400Regular } from "@expo-google-fonts/inter";
+import { useFonts, Raleway_400Regular } from "@expo-google-fonts/raleway";
+import { LibreFranklin_700Bold } from "@expo-google-fonts/libre-franklin";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Home } from "./screens/Home";
+import { Splash } from "./screens/onboarding";
+
+import { DataStore } from "./util/data";
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   let [fontsLoaded] = useFonts({
-    Inter_400Regular,
+    Raleway_400Regular,
+    LibreFranklin_700Bold,
   });
 
-  if (!fontsLoaded) {
+  const [onboardingComplete, setOnboardingComplete] = useState(null);
+  useEffect(() => {
+    (async () => {
+      const onboarding = await DataStore.get("onboarding");
+      console.log(onboarding === "complete");
+      setOnboardingComplete(onboarding === "complete");
+    })();
+  }, []);
+
+  if (!fontsLoaded || onboardingComplete === null) {
     return <AppLoading />;
   }
 
   return (
     <>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            {!onboardingComplete ? (
+              <Stack.Screen name="Onboarding:Splash" component={Splash} />
+            ) : (
+              <Stack.Screen name="Home" component={Home} />
+            )}
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaProvider>
       <Toast />
     </>
   );

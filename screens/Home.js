@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <Utils.Container>
       <Typography.Text>Home</Typography.Text>
+      <Typography.Title>Home</Typography.Title>
     </Utils.Container>
   );
 };

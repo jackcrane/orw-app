@@ -1,23 +1,17 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DataStore = {
-  get email() {
-    return AsyncStorage.getItem("email");
+  set(key, value) {
+    return AsyncStorage.setItem(key, JSON.stringify(value));
   },
-  set email(value) {
-    AsyncStorage.setItem("email", value);
-  },
-  get name() {
-    return AsyncStorage.getItem("name");
-  },
-  set name(value) {
-    AsyncStorage.setItem("name", value);
-  },
-  get onboarding() {
-    return AsyncStorage.getItem("onboarding");
-  },
-  set onboarding(value) {
-    AsyncStorage.setItem("onboarding", value);
+  get(key) {
+    try {
+      return AsyncStorage.getItem(key).then((value) => {
+        return JSON.parse(value);
+      });
+    } catch (error) {
+      return null;
+    }
   },
 };
 
