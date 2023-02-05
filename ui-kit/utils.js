@@ -2,15 +2,24 @@ import React from "react";
 import styled from "styled-components/native";
 
 const Container = styled.ScrollView`
-  padding: 5px;
+  padding: ${(props) => (!props.nopadding ? 15 : 0)}px;
   height: 100%;
-  padding-top: ${(props) => props.topInset + 15 || 25}px;
+  padding-top: ${(props) =>
+    !props.nopadding ? props.topInset + 15 || 25 : 0}px;
+  padding-bottom: ${(props) =>
+    !props.nopadding ? props.bottomInset + 15 || 25 : 0}px;
+  scroll-indicator-insets: ${{
+    right: 1,
+  }};
 `;
 
 const StaticContainer = styled.View`
-  padding: 5px;
+  padding: ${(props) => (!props.nopadding ? 15 : 0)}px;
   height: 100%;
-  padding-top: ${(props) => props.topInset + 15 || 25}px;
+  padding-top: ${(props) =>
+    !props.nopadding ? props.topInset + 15 || 25 : 0}px;
+  padding-bottom: ${(props) =>
+    !props.nopadding ? props.bottomInset + 15 || 25 : 0}px;
 `;
 
 const SplashImage = styled.ImageBackground`

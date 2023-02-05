@@ -3,12 +3,16 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Toast from "react-native-toast-message";
 import AppLoading from "expo-app-loading";
-import { useFonts, Raleway_400Regular } from "@expo-google-fonts/raleway";
+import {
+  useFonts,
+  Raleway_400Regular,
+  Raleway_700Bold,
+} from "@expo-google-fonts/raleway";
 import { LibreFranklin_700Bold } from "@expo-google-fonts/libre-franklin";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Home } from "./screens/Home";
-import { Splash } from "./screens/onboarding";
+import { Splash, Legal, Sources } from "./screens/onboarding";
 
 import { DataStore } from "./util/data";
 
@@ -17,6 +21,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   let [fontsLoaded] = useFonts({
     Raleway_400Regular,
+    Raleway_700Bold,
     LibreFranklin_700Bold,
   });
 
@@ -39,7 +44,11 @@ function App() {
         <NavigationContainer>
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             {!onboardingComplete ? (
-              <Stack.Screen name="Onboarding:Splash" component={Splash} />
+              <>
+                <Stack.Screen name="Onboarding:Splash" component={Splash} />
+                <Stack.Screen name="Onboarding:Legal" component={Legal} />
+                <Stack.Screen name="Onboarding:Sources" component={Sources} />
+              </>
             ) : (
               <Stack.Screen name="Home" component={Home} />
             )}

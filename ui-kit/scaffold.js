@@ -18,6 +18,7 @@ const ImageScaffold = (props) => {
     <SplashContainer
       source={require("../assets/images/splash.png")}
       topInset={insets.top}
+      bottomInset={insets.bottom}
     >
       {props.children}
     </SplashContainer>

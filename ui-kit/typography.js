@@ -7,7 +7,7 @@ const TextBuilder = styled.Text`
 `;
 
 const Text = styled.Text`
-  font-size: 20px;
+  font-size: ${(props) => props.size || 20}px;
   font-family: "Raleway_400Regular";
 `;
 
