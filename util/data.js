@@ -13,6 +13,15 @@ const DataStore = {
       return null;
     }
   },
+  getAll() {
+    return AsyncStorage.getAllKeys().then((keys) => {
+      return AsyncStorage.multiGet(keys).then((stores) => {
+        return stores.map((result, i, store) => {
+          return JSON.parse(store[i][1]);
+        });
+      });
+    });
+  },
 };
 
 export { DataStore };

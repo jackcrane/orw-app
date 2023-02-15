@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components/native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const Container = styled.ScrollView`
+const Container = styled(KeyboardAwareScrollView)`
   padding: ${(props) => (!props.nopadding ? 15 : 0)}px;
   height: 100%;
   padding-top: ${(props) =>

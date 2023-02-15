@@ -31,6 +31,7 @@
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-marquee-view": "^1.0.5",
     "react-native-reanimated": "^2.14.4",
     "react-native-redash": "^18.1.0",

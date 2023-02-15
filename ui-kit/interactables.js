@@ -16,7 +16,7 @@ const ButtonBuilder = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  font-size: ${(props) => props.size || 20}px;
+  font-size: ${(props) => props.size || 25}px;
   color: ${(props) => props.color || "black"};
   font-family: "Raleway_700Bold";
   font-weight: 700;
@@ -27,7 +27,7 @@ const Button = (props) => {
   delete cleanedProps.children;
   return (
     <ButtonBuilder {...cleanedProps}>
-      <ButtonText size={25}>{props.children}</ButtonText>
+      <ButtonText>{props.children}</ButtonText>
     </ButtonBuilder>
   );
 };
@@ -38,7 +38,7 @@ const ButtonOutline = (props) => {
   return (
     <ButtonBuilder
       {...cleanedProps}
-      border={1}
+      border={"1px"}
       borderColor={THEME.colors.black}
       bgColor={THEME.colors.orange}
     >
@@ -47,4 +47,26 @@ const ButtonOutline = (props) => {
   );
 };
 
-export { Button, ButtonOutline };
+const InputBuilder = styled.TextInput`
+  background-color: ${(props) => props.bgColor || "white"};
+  border-radius: ${THEME.measurements.borderRadius};
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border-width: ${(props) => props.border || "0px"};
+  border-color: ${(props) => props.borderColor || "transparent"};
+`;
+
+const Input = styled(InputBuilder)`
+  height: 50px;
+  font-size: 20px;
+  font-family: "Raleway_700Bold";
+  font-weight: 700;
+  border-width: 1px;
+  border-color: ${THEME.colors.black};
+`;
+
+export { Button, ButtonOutline, Input };

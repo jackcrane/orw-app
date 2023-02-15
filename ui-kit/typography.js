@@ -12,7 +12,7 @@ const Text = styled.Text`
 `;
 
 const Title = styled(TextBuilder)`
-  font-size: 32px;
+  font-size: 40px;
   font-family: "LibreFranklin_700Bold";
 `;
 

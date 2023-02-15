@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Toast from "react-native-toast-message";
+import Toast, {
+  ErrorToast,
+  InfoToast,
+  SuccessToast,
+} from "react-native-toast-message";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -9,16 +13,38 @@ import {
   Raleway_700Bold,
 } from "@expo-google-fonts/raleway";
 import { LibreFranklin_700Bold } from "@expo-google-fonts/libre-franklin";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
+import { DeviceEventEmitter } from "react-native";
 
 import { Home } from "./screens/Home";
-import { Splash, Legal, Sources } from "./screens/onboarding";
+import { Splash, Legal, Sources, Contact } from "./screens/onboarding";
 
 import { DataStore } from "./util/data";
 
 const Stack = createNativeStackNavigator();
 
+const TOAST_STYLES = {
+  borderRadius: 0,
+  width: "100%",
+  borderLeftWidth: 0,
+  paddingTop: 50,
+  marginTop: -50,
+  height: 100,
+};
+
 function App() {
+  DeviceEventEmitter.addListener("Onboarding:Complete", () => {
+    setOnboardingComplete(true);
+    Toast.show({
+      type: "success",
+      text1: "Welcome!",
+      text2: "You're all set up.",
+    });
+  });
+
   let [fontsLoaded] = useFonts({
     Raleway_400Regular,
     Raleway_700Bold,
@@ -48,14 +74,69 @@ function App() {
                 <Stack.Screen name="Onboarding:Splash" component={Splash} />
                 <Stack.Screen name="Onboarding:Legal" component={Legal} />
                 <Stack.Screen name="Onboarding:Sources" component={Sources} />
+                <Stack.Screen name="Onboarding:Contact" component={Contact} />
               </>
             ) : (
               <Stack.Screen name="Home" component={Home} />
             )}
           </Stack.Navigator>
         </NavigationContainer>
+        <Toast
+          config={{
+            error: (props) => (
+              <ErrorToast
+                {...props}
+                style={{
+                  backgroundColor: "red",
+                  ...TOAST_STYLES,
+                }}
+                text1Style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+                text2Style={{
+                  color: "white",
+                  fontSize: 16,
+                }}
+              />
+            ),
+            success: (props) => (
+              <SuccessToast
+                {...props}
+                style={{
+                  backgroundColor: "green",
+                  ...TOAST_STYLES,
+                }}
+                text1Style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+                text2Style={{
+                  color: "white",
+                  fontSize: 16,
+                }}
+              />
+            ),
+            info: (props) => (
+              <InfoToast
+                {...props}
+                style={{
+                  backgroundColor: "#1D71F2",
+                  ...TOAST_STYLES,
+                }}
+                text1Style={{
+                  color: "white",
+                  fontSize: 20,
+                }}
+                text2Style={{
+                  color: "white",
+                  fontSize: 16,
+                }}
+              />
+            ),
+          }}
+        />
       </SafeAreaProvider>
-      <Toast />
     </>
   );
 }
