@@ -36,8 +36,11 @@ const TOAST_STYLES = {
 };
 
 function App() {
+  const [onboardingComplete, setOnboardingComplete] = useState(null);
+
   DeviceEventEmitter.addListener("Onboarding:Complete", () => {
     setOnboardingComplete(true);
+    DataStore.set("onboarding", "complete");
     Toast.show({
       type: "success",
       text1: "Welcome!",
@@ -51,11 +54,10 @@ function App() {
     LibreFranklin_700Bold,
   });
 
-  const [onboardingComplete, setOnboardingComplete] = useState(null);
   useEffect(() => {
     (async () => {
       const onboarding = await DataStore.get("onboarding");
-      console.log(onboarding === "complete");
+      console.log("Onboarding complete?", onboarding === "complete");
       setOnboardingComplete(onboarding === "complete");
     })();
   }, []);

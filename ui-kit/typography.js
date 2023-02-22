@@ -16,4 +16,10 @@ const Title = styled(TextBuilder)`
   font-family: "LibreFranklin_700Bold";
 `;
 
-export { Text, Title };
+const Whisper = styled(Text)`
+  font-size: 15px;
+  font-family: "Raleway_400Regular";
+  color: #a0a0a0;
+`;
+
+export { Text, Title, Whisper };

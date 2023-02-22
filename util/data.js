@@ -2,7 +2,12 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const DataStore = {
   set(key, value) {
-    return AsyncStorage.setItem(key, JSON.stringify(value));
+    console.log("Setting", key, value);
+    try {
+      return AsyncStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.log("Error setting", key, value, error);
+    }
   },
   get(key) {
     try {

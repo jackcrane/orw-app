@@ -9,8 +9,8 @@ import Toast from "react-native-toast-message";
 import { DataStore } from "../../util/data";
 
 const Contact = (props) => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState("jack@jackcrane.rocks");
+  const [name, setName] = useState("jack");
   const [working, setWorking] = useState(false);
 
   const submit = async () => {
@@ -32,7 +32,6 @@ const Contact = (props) => {
         text1: "Invalid name",
         text2: "Please enter a valid name.",
       });
-      DataStore.set("name", name);
       setWorking(false);
       return;
     }
@@ -47,6 +46,7 @@ const Contact = (props) => {
       text1: "Success",
       text2: "You have been added to the mailing list.",
     });
+    DataStore.set("name", name);
     DeviceEventEmitter.emit("Onboarding:Complete");
     setWorking(false);
   };
@@ -75,13 +75,15 @@ const Contact = (props) => {
         onChangeText={setEmail}
         autoComplete="email"
         placeholder="you@example.com"
+        value={email}
       />
       <Spacer height={"20px"} />
-      <Typography.Text>Name</Typography.Text>
+      <Typography.Text>First Name</Typography.Text>
       <Interactables.Input
         onChangeText={setName}
         autoComplete="name"
-        placeholder="John Doe"
+        placeholder="John"
+        value={name}
       />
     </Page.Page>
   );

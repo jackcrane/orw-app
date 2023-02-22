@@ -7,7 +7,6 @@ const ButtonBuilder = styled.TouchableOpacity`
   border-radius: ${THEME.measurements.borderRadius};
   padding: 10px;
   margin: 5px;
-  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +20,28 @@ const ButtonText = styled.Text`
   font-family: "Raleway_700Bold";
   font-weight: 700;
 `;
+
+const BigButtonBuilder = styled.TouchableOpacity`
+  background-color: ${(props) => props.bgColor || "transparent"};
+  border-radius: ${THEME.measurements.borderRadius};
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: ${(props) => props.border || "2px"};
+  border-color: ${(props) => props.borderColor || "black"};
+`;
+
+const BigButton = (props) => {
+  const cleanedProps = { ...props };
+  delete cleanedProps.children;
+  return (
+    <BigButtonBuilder {...cleanedProps}>
+      <ButtonText>{props.children}</ButtonText>
+    </BigButtonBuilder>
+  );
+};
 
 const Button = (props) => {
   const cleanedProps = { ...props };
@@ -47,6 +68,20 @@ const ButtonOutline = (props) => {
   );
 };
 
+const LargeButtonOutline = (props) => {
+  const cleanedProps = { ...props };
+  delete cleanedProps.children;
+  return (
+    <ButtonBuilder
+      {...cleanedProps}
+      border={"2px"}
+      borderColor={THEME.colors.black}
+    >
+      <ButtonText size={30}>{props.children}</ButtonText>
+    </ButtonBuilder>
+  );
+};
+
 const InputBuilder = styled.TextInput`
   background-color: ${(props) => props.bgColor || "white"};
   border-radius: ${THEME.measurements.borderRadius};
@@ -69,4 +104,4 @@ const Input = styled(InputBuilder)`
   border-color: ${THEME.colors.black};
 `;
 
-export { Button, ButtonOutline, Input };
+export { Button, ButtonOutline, BigButton, Input, LargeButtonOutline };

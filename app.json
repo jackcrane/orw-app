@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "react-native-template",
-    "slug": "react-native-template",
-    "version": "0.0.1",
+    "name": "Ohio River Way",
+    "slug": "orw-app",
+    "version": "0.0.1a",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,13 +14,11 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.jackcrane.reactnativetemplate",
-      "buildNumber": "2"
+      "supportsTablet": false,
+      "bundleIdentifier": "com.jackcrane.orw",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {

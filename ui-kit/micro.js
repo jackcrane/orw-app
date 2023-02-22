@@ -33,4 +33,10 @@ const Absolute = styled.View`
   align-items: center;
 `;
 
-export { FlexCenter, Row, Spacer, Directional, Absolute };
+const Center = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export { FlexCenter, Row, Spacer, Directional, Absolute, Center };
