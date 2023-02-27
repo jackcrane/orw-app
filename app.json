@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.jackcrane.orw",
@@ -31,7 +33,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "8d8d2b67-aa52-4fdc-8da0-7e6c892368db"
+        "projectId": "92e5f435-17b0-43cc-857d-575276135b01"
       }
     }
   }
