@@ -35,8 +35,10 @@ const Absolute = styled.View`
 
 const Center = styled.View`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => (props.between ? "space-between" : "center")};
+  width: 100%;
   align-items: center;
+  flex-direction: ${(props) => props.direction || "column"};
 `;
 
 export { FlexCenter, Row, Spacer, Directional, Absolute, Center };

@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import React from "react";
 import { THEME } from "./theme";
+import { Alert, Linking } from "react-native";
 
 const ButtonBuilder = styled.TouchableOpacity`
   background-color: ${(props) => props.bgColor || "white"};
@@ -104,4 +105,87 @@ const Input = styled(InputBuilder)`
   border-color: ${THEME.colors.black};
 `;
 
-export { Button, ButtonOutline, BigButton, Input, LargeButtonOutline };
+const EmergencyButtonBuilder = styled.TouchableOpacity`
+  background-color: ${THEME.colors.red};
+  border-radius: ${THEME.measurements.borderRadius};
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const EmergencyButton = (props) => {
+  const cleanedProps = { ...props };
+  delete cleanedProps.children;
+  return (
+    <EmergencyButtonBuilder
+      {...cleanedProps}
+      onPress={() =>
+        Alert.alert(
+          "Get help",
+          "Select who you would like to contact. Pressing these buttons will open a phone call",
+          [
+            {
+              text: "Call 911",
+              style: "destructive",
+              onPress: () => {
+                console.log("Calling 911");
+                // Open phone call
+                Linking.openURL("tel:911");
+              },
+            },
+            {
+              text: "US Coast Guard sector Ohio Valley",
+              onPress: () => {
+                console.log("Calling US Coast Guard sector Ohio Valley");
+                Linking.openURL("tel:8002537465");
+              },
+            },
+            {
+              text: "Medahl locks and dam",
+              onPress: () => {
+                console.log("Calling Medahl locks and dam");
+                Linking.openURL("tel:5138762921");
+              },
+            },
+            {
+              text: "Markland Locks and Dam",
+              onPress: () => {
+                console.log("Calling Markland Locks and Dam");
+                Linking.openURL("tel:8595677661");
+              },
+            },
+            {
+              text: "McAlpine Locks and Dam",
+              onPress: () => {
+                console.log("Calling McAlpine Locks and Dam");
+                Linking.openURL("tel:5025677661");
+              },
+            },
+            {
+              text: "Cancel",
+            },
+          ]
+        )
+      }
+    >
+      <ButtonText color={THEME.colors.white} size={15}>
+        Emergency
+      </ButtonText>
+      <ButtonText color={THEME.colors.white} size={20}>
+        Get Help
+      </ButtonText>
+    </EmergencyButtonBuilder>
+  );
+};
+
+export {
+  Button,
+  ButtonOutline,
+  BigButton,
+  Input,
+  LargeButtonOutline,
+  EmergencyButton,
+};
