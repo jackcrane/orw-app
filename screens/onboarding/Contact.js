@@ -9,8 +9,8 @@ import Toast from "react-native-toast-message";
 import { DataStore } from "../../util/data";
 
 const Contact = (props) => {
-  const [email, setEmail] = useState("jack@jackcrane.rocks");
-  const [name, setName] = useState("jack");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [working, setWorking] = useState(false);
 
   const submit = async () => {

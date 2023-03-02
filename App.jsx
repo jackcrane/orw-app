@@ -21,6 +21,7 @@ import { DeviceEventEmitter } from "react-native";
 
 import { Home } from "./screens/Home";
 import { Splash, Legal, Sources, Contact } from "./screens/onboarding";
+import { DigitalGuide } from "./screens/DigitalGuide";
 
 import { DataStore } from "./util/data";
 
@@ -79,7 +80,13 @@ function App() {
                 <Stack.Screen name="Onboarding:Contact" component={Contact} />
               </>
             ) : (
-              <Stack.Screen name="Home" component={Home} />
+              <>
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen
+                  name="Main:DigitalGuide"
+                  component={DigitalGuide}
+                />
+              </>
             )}
           </Stack.Navigator>
         </NavigationContainer>

@@ -181,6 +181,24 @@ const EmergencyButton = (props) => {
   );
 };
 
+const LinkBuilder = styled.TouchableOpacity``;
+const LinkText = styled.Text`
+  font-size: ${(props) => props.size || 20}px;
+  color: ${(props) => props.color || THEME.colors.blue};
+  font-family: "Raleway_700Bold";
+  font-weight: 700;
+`;
+
+const Link = (props) => {
+  const cleanedProps = { ...props };
+  delete cleanedProps.children;
+  return (
+    <LinkBuilder {...cleanedProps}>
+      <LinkText>{props.children}</LinkText>
+    </LinkBuilder>
+  );
+};
+
 export {
   Button,
   ButtonOutline,
@@ -188,4 +206,5 @@ export {
   Input,
   LargeButtonOutline,
   EmergencyButton,
+  Link,
 };

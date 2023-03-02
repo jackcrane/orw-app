@@ -13,6 +13,7 @@ const Directional = styled.View`
   flex-direction: ${(props) => props.direction || "row"};
   justify-content: ${(props) => (props.direction ? "space-between" : "center")};
   align-items: ${(props) => (props.direction ? "flex-start" : "center")};
+  align-items: ${(props) => props.align || null};
 `;
 
 const Row = styled(Directional)`

@@ -5,6 +5,7 @@ export const THEME = {
     white: "#FFFFFF",
     orange: "#FFA200",
     red: "#FF0000",
+    blue: "#0000FF",
   },
   measurements: {
     borderRadius: "15px",

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Media, Micro, Typography, Interactables, Scaffold } from ".";
-import { Button } from "./interactables";
 import { Directional, Row, Spacer } from "./micro";
 import { Container, StaticContainer } from "./utils";
 
@@ -10,23 +9,45 @@ const Page = (props) => {
     <Scaffold.Scaffold>
       <Directional direction={props.compact ? "row" : "column"}>
         <Directional direction="row">
-          <Micro.Center between direction="row">
+          {!props.compact ? (
+            <Micro.Center between direction="row">
+              <Media.Image
+                source={require("../assets/images/logo.png")}
+                height={"100px"}
+              />
+              <Interactables.EmergencyButton />
+            </Micro.Center>
+          ) : (
             <Media.Image
               source={require("../assets/images/logo.png")}
               height={"100px"}
             />
-            <Interactables.EmergencyButton />
-          </Micro.Center>
+          )}
         </Directional>
         <Spacer height={"40px"} />
-        <Typography.Title>{props.title}</Typography.Title>
+        <Directional direction="column" align="flex-end">
+          <Typography.Title>{props.title}</Typography.Title>
+          {props.backable && (
+            <Interactables.Link onPress={() => props.navigation.goBack()}>
+              &lt; Back
+            </Interactables.Link>
+          )}
+        </Directional>
       </Directional>
       <Spacer />
-      <Container nopadding>
-        <Spacer />
-        {props.children}
-        <Spacer height={"150px"} />
-      </Container>
+      {props.static ? (
+        <StaticContainer nopadding>
+          <Spacer />
+          {props.children}
+          <Spacer height={"150px"} />
+        </StaticContainer>
+      ) : (
+        <Container nopadding>
+          <Spacer />
+          {props.children}
+          <Spacer height={"150px"} />
+        </Container>
+      )}
       {props.outside}
       <Micro.Absolute bottom={"20px"}>
         <Typography.Whisper>
