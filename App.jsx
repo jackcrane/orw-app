@@ -22,8 +22,11 @@ import { DeviceEventEmitter } from "react-native";
 import { Home } from "./screens/Home";
 import { Splash, Legal, Sources, Contact } from "./screens/onboarding";
 import { DigitalGuide } from "./screens/DigitalGuide";
+import { Safety } from "./screens/Safety";
 
 import { DataStore } from "./util/data";
+import { RequiredEquipment } from "./screens/RequiredEqupment";
+import { Events } from "./screens/Events";
 
 const Stack = createNativeStackNavigator();
 
@@ -75,8 +78,11 @@ function App() {
             {!onboardingComplete ? (
               <>
                 <Stack.Screen name="Onboarding:Splash" component={Splash} />
-                <Stack.Screen name="Onboarding:Legal" component={Legal} />
-                <Stack.Screen name="Onboarding:Sources" component={Sources} />
+                <Stack.Screen
+                  name="Onboarding:Legal"
+                  component={Legal}
+                  options={{ headerShown: true, title: "The Legal Stuff" }}
+                />
                 <Stack.Screen name="Onboarding:Contact" component={Contact} />
               </>
             ) : (
@@ -85,7 +91,17 @@ function App() {
                 <Stack.Screen
                   name="Main:DigitalGuide"
                   component={DigitalGuide}
+                  options={{
+                    headerShown: true,
+                    title: "Digital Guide",
+                  }}
                 />
+                <Stack.Screen name="Main:Safety" component={Safety} />
+                <Stack.Screen
+                  name="Main:RequiredEquipment"
+                  component={RequiredEquipment}
+                />
+                <Stack.Screen name="Main:Events" component={Events} />
               </>
             )}
           </Stack.Navigator>

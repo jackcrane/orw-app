@@ -12,20 +12,20 @@ const Page = (props) => {
           {!props.compact ? (
             <Micro.Center between direction="row">
               <Media.Image
-                source={require("../assets/images/logo.png")}
-                height={"100px"}
+                source={require("../assets/images/logo-horiz.png")}
+                height={"50px"}
               />
-              <Interactables.EmergencyButton />
+              {/* <Interactables.EmergencyButton /> */}
             </Micro.Center>
           ) : (
             <Media.Image
-              source={require("../assets/images/logo.png")}
-              height={"100px"}
+              source={require("../assets/images/logo-horiz.png")}
+              height={"50px"}
             />
           )}
         </Directional>
-        <Spacer height={"40px"} />
-        <Directional direction="column" align="flex-end">
+        <Spacer height={"20px"} />
+        <Directional direction="column" align={props.compact && "flex-end"}>
           <Typography.Title>{props.title}</Typography.Title>
           {props.backable && (
             <Interactables.Link onPress={() => props.navigation.goBack()}>
@@ -51,7 +51,8 @@ const Page = (props) => {
       {props.outside}
       <Micro.Absolute bottom={"20px"}>
         <Typography.Whisper>
-          f66ae1ff-f8d7-45a7-b1d9-1fa9a372d33e
+          Version {require("../app.json").expo.version}. Not for public
+          consumption.
         </Typography.Whisper>
       </Micro.Absolute>
     </Scaffold.Scaffold>

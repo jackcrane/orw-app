@@ -66,10 +66,17 @@ const Contact = (props) => {
       }
     >
       <Typography.Text>
-        If you wish to join the Ohio River Way's mailing list and get up-to-date
-        information
+        Join the Ohio River Way's mailing list and get up-to-date information
       </Typography.Text>
       <Spacer height={"40px"} />
+      <Typography.Text>Name</Typography.Text>
+      <Interactables.Input
+        onChangeText={setName}
+        autoComplete="name"
+        placeholder="John Smith"
+        value={name}
+      />
+      <Spacer height={"20px"} />
       <Typography.Text>Email</Typography.Text>
       <Interactables.Input
         onChangeText={setEmail}
@@ -78,13 +85,16 @@ const Contact = (props) => {
         value={email}
       />
       <Spacer height={"20px"} />
-      <Typography.Text>First Name</Typography.Text>
-      <Interactables.Input
-        onChangeText={setName}
-        autoComplete="name"
-        placeholder="John"
-        value={name}
-      />
+      <Typography.Text>
+        By signing up, you agree to our{"\n"}
+        <Interactables.Link
+          onPress={() => {
+            props.navigation.navigate("Onboarding:Legal");
+          }}
+        >
+          legal stuff
+        </Interactables.Link>{" "}
+      </Typography.Text>
     </Page.Page>
   );
 };

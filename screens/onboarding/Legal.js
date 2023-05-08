@@ -5,19 +5,7 @@ import { Absolute } from "../../ui-kit/micro";
 
 const Legal = (props) => {
   return (
-    <Page.Page
-      title="The legal stuff."
-      outside={
-        <Absolute bottom={"50px"}>
-          <Interactables.ButtonOutline
-            outline
-            onPress={() => props.navigation.navigate("Onboarding:Sources")}
-          >
-            Okay cool
-          </Interactables.ButtonOutline>
-        </Absolute>
-      }
-    >
+    <Page.Page title="The legal stuff.">
       <Typography.Text size={15}>{LEGAL}</Typography.Text>
     </Page.Page>
   );

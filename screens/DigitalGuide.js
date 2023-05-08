@@ -6,37 +6,30 @@ import { Page, Typography, Interactables } from "../ui-kit";
 
 const DigitalGuide = (props) => {
   return (
-    <Page.Page
-      navigation={props.navigation}
-      backable
-      title="Digital Guide"
-      compact
-      static
-    >
-      <View style={{ height: "80%" }}>
-        <WebView
-          onLoad={() => {
-            console.log("loaded");
-          }}
-          onError={(e) => {
-            console.log("error", e);
-            Toast.show({
-              type: "error",
-              text1: "Error",
-              text2: "The webview failed to load",
-            });
-          }}
-          style={{
-            height: "100%",
-            width: "100%",
-            backgroundColor: "red",
-            borderColor: "blue",
-            borderWidth: 1,
-          }}
-          source={{ uri: "https://gis.oki.org/ohioriverway/" }}
-        />
-      </View>
-    </Page.Page>
+    <View style={{ height: "100%" }}>
+      <WebView
+        onLoad={() => {
+          console.log("loaded");
+        }}
+        onError={(e) => {
+          console.log("error", e);
+          Toast.show({
+            type: "error",
+            text1: "Error",
+            text2: "The webview failed to load",
+          });
+        }}
+        style={{
+          height: "100%",
+          width: "100%",
+        }}
+        source={{ uri: "https://gis.oki.org/ohioriverway/" }}
+        injectedJavaScript={`
+        document.getElementById('mode-boat').click()
+        document.getElementById('modal-i-agree-btn').click()
+        `}
+      />
+    </View>
   );
 };
 

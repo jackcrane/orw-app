@@ -1,7 +1,9 @@
 import styled from "styled-components/native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { THEME } from "./theme";
 import { Alert, Linking } from "react-native";
+import { Text } from "./typography";
+import { Typography } from ".";
 
 const ButtonBuilder = styled.TouchableOpacity`
   background-color: ${(props) => props.bgColor || "white"};
@@ -182,7 +184,7 @@ const EmergencyButton = (props) => {
 };
 
 const LinkBuilder = styled.TouchableOpacity``;
-const LinkText = styled.Text`
+const LinkText = styled(Text)`
   font-size: ${(props) => props.size || 20}px;
   color: ${(props) => props.color || THEME.colors.blue};
   font-family: "Raleway_700Bold";
@@ -199,6 +201,48 @@ const Link = (props) => {
   );
 };
 
+const SelectItem = styled.TouchableOpacity`
+  background-color: ${(props) =>
+    props.selected ? THEME.colors.orange : THEME.colors.grey};
+  border: 1px solid ${THEME.colors.black};
+  border-top-width: ${(props) => (props.first ? "1px" : "0px")};
+  border-top-left-radius: ${(props) => (props.first ? "15px" : "0px")};
+  border-top-right-radius: ${(props) => (props.first ? "15px" : "0px")};
+  border-bottom-left-radius: ${(props) => (props.last ? "15px" : "0px")};
+  border-bottom-right-radius: ${(props) => (props.last ? "15px" : "0px")};
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+`;
+
+const SelectGroup = (props) => {
+  const [selected, setSelected] = useState(props.value || "");
+
+  useEffect(() => {
+    if (props.onSelect) props.onSelect(selected);
+  }, [selected]);
+
+  return (
+    <>
+      {props.options.map((option, i) => (
+        <SelectItem
+          first={i === 0}
+          last={i === props.options.length - 1}
+          onPress={() => setSelected(option.value)}
+          selected={selected === option.value}
+          activeOpacity={0.7}
+        >
+          <Typography.Text bold size={25}>
+            {option.title}
+          </Typography.Text>
+          <Typography.Text size={20}>{option.subtitle}</Typography.Text>
+        </SelectItem>
+      ))}
+    </>
+  );
+};
+
 export {
   Button,
   ButtonOutline,
@@ -207,4 +251,5 @@ export {
   LargeButtonOutline,
   EmergencyButton,
   Link,
+  SelectGroup,
 };

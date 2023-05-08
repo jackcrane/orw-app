@@ -14,7 +14,7 @@ const Splash = (props) => {
           Plan your next adventure.
         </Typography.Title>
         <Interactables.Button
-          onPress={() => props.navigation.navigate("Onboarding:Legal")}
+          onPress={() => props.navigation.navigate("Onboarding:Contact")}
         >
           Get started
         </Interactables.Button>

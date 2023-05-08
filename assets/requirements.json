@@ -1,0 +1,319 @@
+{
+  "sections": [
+    {
+      "title": "Title",
+      "reference": "ORC 1548.03",
+      "items": [
+        {
+          "required-text": "A title must be held, but does not need to be carried onboard",
+          "not-required-text": "A title is not required for this vessel",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-row",
+            "mp-inflatable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Registration and Numbers",
+      "reference": "ORC 1547.53",
+      "items": [
+        {
+          "required-text": "Required",
+          "not-required-text": "Not Required",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Personal Floatation Devices",
+      "reference": "ORC 1547.25",
+      "items": [
+        {
+          "required-text": "One type I, II, III, or V wearable device for each person on board is always required.",
+          "not-required-text": "One type I, II, III, or V wearable device for each person on board is not required.",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable",
+            "mp-other"
+          ]
+        },
+        {
+          "required-text": "One type IV throwable device as an extra is required",
+          "not-required-text": "One type IV throwable device as an extra is not required",
+          "required-classes": ["pb-1", "pb-2", "pb-3", "sb-1", "sb-2", "sb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Fire Extinguishers",
+      "reference": "ORC 1547.27",
+      "items": [
+        {
+          "required-text": "One type B-1 fire extinguisher is required",
+          "not-required-text": "One type B-1 fire extinguisher is not required",
+          "required-classes": ["pb-pwc", "pb-a", "pb-1"]
+        },
+        {
+          "required-text": "Two type B-1 or one type B-2 fire extinguisher is required",
+          "not-required-text": "Two type B-1 or one type B-2 fire extinguisher is not required",
+          "required-classes": ["pb-2"]
+        },
+        {
+          "required-text": "Three type B-1 or one B-2 plus one B-1 fire extinguisher is required",
+          "not-required-text": "Three type B-1 or one B-2 plus one B-1 fire extinguisher is not required",
+          "required-classes": ["pb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Visual Distress Signals",
+      "reference": "ORC 1547.251",
+      "items": [
+        {
+          "required-text": "On Lake Erie, a USCG-approved signal for both day and night use is required",
+          "not-required-text": "On Lake Erie, a USCG-approved signal for both day and night use is not required",
+          "required-classes": ["pb-1", "pb-2", "pb-3", "sb-2", "sb-3"]
+        },
+        {
+          "required-text": "On Lake Erie (sunset to sunrise), a USCG approved signal for night use is required",
+          "not-required-text": "On Lake Erie (sunset to sunrise), a USCG approved signal for night use is not required",
+          "required-classes": [
+            "pb-a",
+            "sb-a",
+            "sb-1",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable",
+            "mp-other"
+          ]
+        },
+        {
+          "required-text": "On waters other than Lake Erie, a distress flag or USCG approved signal for day use is required",
+          "not-required-text": "On waters other than Lake Erie, a distress flag or USCG approved signal for day use is not required",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Sound Signaling Devices",
+      "reference": "OAC 1501:47-2-33",
+      "items": [
+        {
+          "required-text": "On federal waters, a horn or other device is required",
+          "not-required-text": "On federal waters, a horn or other device is not required",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable",
+            "mp-other"
+          ]
+        },
+        {
+          "required-text": "On inland waters a whistel, horn, or other device is required",
+          "not-required-text": "On inland waters a whistel, horn, or other device is not required",
+          "required-classes": ["pb-1", "pb-2", "pb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Anchor and Line",
+      "reference": "ORC 1547.26 and OAC 1501:47-1-11",
+      "items": [
+        {
+          "required-text": "One anchor and line of sufficient length is required",
+          "not-required-text": "One anchor and line of sufficient length is not required",
+          "required-classes": [
+            "pb-pwc",
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-row",
+            "mp-inflatable"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Lights",
+      "reference": "OAC 1501:47-2",
+      "items": [
+        {
+          "required-text": "Running lights as prescribed by federal and state law are required",
+          "not-required-text": "Running lights as prescribed by federal and state law are not required",
+          "required-classes": [
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-1",
+            "sb-2",
+            "sb-3"
+          ]
+        },
+        {
+          "required-text": "Running lights or electric torch or lighted lantern are required",
+          "not-required-text": "Running lights or electric torch or lighted lantern are not required",
+          "required-classes": [
+            "sb-a",
+            "sb-1",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable",
+            "mp-other"
+          ]
+        },
+        {
+          "required-text": "Anchor light (displayed at anchor) is required",
+          "not-required-text": "Anchor light (displayed at anchor) is not required",
+          "required-classes": [
+            "pb-a",
+            "pb-1",
+            "pb-2",
+            "pb-3",
+            "sb-a",
+            "sb-1",
+            "sb-2",
+            "sb-3",
+            "mp-canoe",
+            "mp-row",
+            "mp-inflatable",
+            "mp-other"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ventilation",
+      "reference": "ORC 1547.29",
+      "items": [
+        {
+          "required-text": "Entine and fuel tank compartment ventilation is required",
+          "not-required-text": "Entine and fuel tank compartment ventilation is not required",
+          "required-classes": ["pb-pwc", "pb-a", "pb-1", "pb-2", "pb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Backfire Flame Arrestor",
+      "reference": "ORC 1547.28",
+      "items": [
+        {
+          "required-text": "A backfire flame arrestor for inboard engines is required",
+          "not-required-text": "A backfire flame arrestor for inboard engines is not required",
+          "required-classes": ["pb-pwc", "pb-a", "pb-1", "pb-2", "pb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Muffling Device",
+      "reference": "ORC 1547.31",
+      "items": [
+        {
+          "required-text": "A muffling device or underwater exhaust is required",
+          "not-required-text": "A muffling device or underwater exhaust is not required",
+          "required-classes": ["pb-pwc", "pb-a", "pb-1", "pb-2", "pb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Engine cutoff",
+      "reference": "ORC 1547.41",
+      "items": [
+        {
+          "required-text": "An engine cutoff switch lanyard is required",
+          "not-required-text": "An engine cutoff switch lanyard is not required",
+          "required-classes": ["pb-pwc"]
+        }
+      ]
+    },
+    {
+      "title": "Inland navigation rules",
+      "reference": "OAC 1501:47-1-29",
+      "items": [
+        {
+          "required-text": "Inland navigation rules are required",
+          "not-required-text": "Inland navigation rules are not required",
+          "required-classes": ["pb-2", "pb-3", "sb-2", "sb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Garbage Placcard",
+      "reference": "OAC 1501:47-1-28",
+      "items": [
+        {
+          "required-text": "A garbage placard is required",
+          "not-required-text": "A garbage placard is not required",
+          "required-classes": ["pb-2", "pb-3", "sb-2", "sb-3"]
+        }
+      ]
+    },
+    {
+      "title": "Oil Pollution Placcard",
+      "reference": "OAC 1501:47-1-27",
+      "items": [
+        {
+          "required-text": "An oil pollution placard is required",
+          "not-required-text": "An oil pollution placard is not required",
+          "required-classes": ["pb-2", "pb-3", "sb-2", "sb-3"]
+        }
+      ]
+    }
+  ]
+}

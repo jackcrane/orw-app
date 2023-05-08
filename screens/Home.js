@@ -33,28 +33,16 @@ const Home = (props) => {
         <Typography.Text>Weather & River Conditions</Typography.Text>
       </Interactables.LargeButtonOutline>
       <Interactables.LargeButtonOutline
-        onPress={() =>
-          Toast.show({
-            type: "info",
-            text1: "Coming Soon",
-            text2: "This feature is not ready yet.",
-          })
-        }
+        onPress={() => props.navigation.navigate("Main:Safety")}
       >
         <Typography.Text>Safety Information</Typography.Text>
       </Interactables.LargeButtonOutline>
       <Interactables.LargeButtonOutline
-        onPress={() =>
-          Toast.show({
-            type: "info",
-            text1: "Coming Soon",
-            text2: "This feature is not ready yet.",
-          })
-        }
+        onPress={() => props.navigation.navigate("Main:Events")}
       >
         <Typography.Text>Rivertown Events</Typography.Text>
       </Interactables.LargeButtonOutline>
-      <Interactables.ButtonOutline
+      {/* <Interactables.ButtonOutline
         onPress={async () => {
           console.log("Resetting onboarding");
           await DataStore.set("onboarding", null);
@@ -62,15 +50,18 @@ const Home = (props) => {
           console.log("Reloaded JS");
         }}
       >
-        <Typography.Text>Reset onboarding</Typography.Text>
+        <Typography.Text>Reset onboarding*</Typography.Text>
       </Interactables.ButtonOutline>
       <Micro.Spacer height={30} />
       <Micro.Center>
         <Typography.Whisper>
-          App built by Jack Crane. Compiled on 2/21/2023. Version 0.0.1a. The
-          current state of this app is not for public consumption.
+          App built by Jack Crane. Version {require("../app.json").expo.version}
+          . The current state of this app is not for public consumption.
+          {`\n\n`}
+          *The reset onboarding button is for development purposes only. It will
+          be removed in public-facing builds
         </Typography.Whisper>
-      </Micro.Center>
+      </Micro.Center> */}
     </Page.Page>
   );
 };
