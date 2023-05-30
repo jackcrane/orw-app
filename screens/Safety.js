@@ -30,13 +30,7 @@ const Safety = (props) => {
         </Typography.Text>
         <Micro.Spacer />
         <Interactables.ButtonOutline
-          onPress={() =>
-            Toast.show({
-              type: "info",
-              text1: "Coming Soon",
-              text2: "This feature is not ready yet.",
-            })
-          }
+          onPress={() => props.navigation.navigate("Main:Weather")}
         >
           <Typography.Text>Check the weather</Typography.Text>
           {/* TODO: Route this to the weather page */}
@@ -108,7 +102,7 @@ const Safety = (props) => {
             .split("  ")
             .join("")}
         </Typography.Text>
-        <Micro.Spacer height={30} />
+        {/* <Micro.Spacer height={30} />
         <Typography.Title>Disclaimer</Typography.Title>
         <Micro.Spacer />
         <Interactables.ButtonOutline
@@ -121,7 +115,7 @@ const Safety = (props) => {
           }
         >
           <Typography.Text>View the legal stuff</Typography.Text>
-        </Interactables.ButtonOutline>
+        </Interactables.ButtonOutline> */}
       </Page.Page>
     </>
   );

@@ -27,6 +27,7 @@ import { Safety } from "./screens/Safety";
 import { DataStore } from "./util/data";
 import { RequiredEquipment } from "./screens/RequiredEqupment";
 import { Events } from "./screens/Events";
+import { Weather } from "./screens/Weather";
 
 const Stack = createNativeStackNavigator();
 
@@ -102,6 +103,7 @@ function App() {
                   component={RequiredEquipment}
                 />
                 <Stack.Screen name="Main:Events" component={Events} />
+                <Stack.Screen name="Main:Weather" component={Weather} />
               </>
             )}
           </Stack.Navigator>

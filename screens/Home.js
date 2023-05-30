@@ -22,13 +22,7 @@ const Home = (props) => {
         <Typography.Text>Digital Guide</Typography.Text>
       </Interactables.LargeButtonOutline>
       <Interactables.LargeButtonOutline
-        onPress={() =>
-          Toast.show({
-            type: "info",
-            text1: "Coming Soon",
-            text2: "This feature is not ready yet.",
-          })
-        }
+        onPress={() => props.navigation.navigate("Main:Weather")}
       >
         <Typography.Text>Weather & River Conditions</Typography.Text>
       </Interactables.LargeButtonOutline>
@@ -42,7 +36,7 @@ const Home = (props) => {
       >
         <Typography.Text>Rivertown Events</Typography.Text>
       </Interactables.LargeButtonOutline>
-      {/* <Interactables.ButtonOutline
+      <Interactables.ButtonOutline
         onPress={async () => {
           console.log("Resetting onboarding");
           await DataStore.set("onboarding", null);
@@ -61,7 +55,7 @@ const Home = (props) => {
           *The reset onboarding button is for development purposes only. It will
           be removed in public-facing builds
         </Typography.Whisper>
-      </Micro.Center> */}
+      </Micro.Center>
     </Page.Page>
   );
 };

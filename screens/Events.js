@@ -84,7 +84,7 @@ const EventCard = ({ event }) => {
               <Typography.RalewaySubtitle size="20px">
                 {event.title}
               </Typography.RalewaySubtitle>
-              <Typography.Text size="15px">{event.date}</Typography.Text>
+              <Typography.Text size="15px">{event.date.trim()}</Typography.Text>
             </ECContent>
             {isHistory(event.date) === "history" && (
               <ECHistory>
@@ -128,9 +128,9 @@ const Events = (props) => {
         {events.length === 0 && (
           <Typography.Text>Loading events...</Typography.Text>
         )}
-        {events.map((event) => (
+        {events.map((event, i) => (
           // <Typography.Text>{event.title}</Typography.Text>
-          <EventCard event={event} />
+          <EventCard event={event} key={i} />
         ))}
       </Page.Page>
     </>
