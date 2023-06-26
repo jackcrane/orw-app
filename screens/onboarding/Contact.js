@@ -40,7 +40,13 @@ const Contact = (props) => {
       text1: "Working",
       text2: "We are adding you to the mailing list.",
     });
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await fetch(`https://orw.jackcrane.rocks/user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, name }),
+    });
     Toast.show({
       type: "success",
       text1: "Success",
